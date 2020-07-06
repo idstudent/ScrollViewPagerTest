@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 import pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
 
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.setInterval(2000) // 페이지 넘어갈 시간 간격 설정
         viewPager.startAutoScroll() //Auto Scroll 시작
         scrollAdapter.moveListener(moveListener)
+        indicator.setViewPager(viewPager)
     }
     val moveListener = object : MoveListener{
         var intent : Intent ?= null
